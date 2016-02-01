@@ -73,6 +73,14 @@ textarea {
 	padding-right: 10px;
 	max-width: 960px;
 }
+@media (min-width: 480px) {
+	.ba-width-small-1-6 {
+    width: 16.667%;
+    }
+    .ba-width-small-2-6 {
+    width: 33.333%;
+    }
+}
 // ba-presentation
 .ba-presentation {
 	background-color:  @primary-color;
@@ -363,6 +371,12 @@ textarea {
 	.ba-support__title {
 		font-size: 26px;
 	}
+	.ba-support__social li {
+		margin: 0 5px;
+	}
+	.ba-support__social li:last-child {
+         margin-right: 5px;
+    }
 }
 // footer
 .ba-footer {
@@ -386,6 +400,15 @@ textarea {
 		margin-top: 0;
 		padding: 0;
 	}
+}
+@media (max-width: 480px) {
+	.ba-footer {
+		text-align: center;
+	}
+	.ba-footer ul {
+    margin: 20px 0 0 0;
+    padding: 0;
+    }
 }
 
 
