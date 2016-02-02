@@ -759,6 +759,9 @@ select {
 .ba-logo {
   padding-left: 8px;
 }
+.ba-menu-toggle {
+  display: none;
+}
 .ba-menu {
   margin: 0;
   padding: 12px 0 0 ;
@@ -856,9 +859,6 @@ select {
   }
 }
 @media (max-width: 480px) {
-  .ba-menu {
-    display: none;
-  }
   .ba-presentation__body {
     text-align: center;
     padding: 0 0 30px 0;
@@ -879,6 +879,96 @@ select {
   }
   .ba-presentation__icon li {
     padding: 0 20px;
+  }
+  .ba-menu-toggle {
+    display: block;
+    float: right;
+    padding: 0 20px;
+  }
+  .ba-menu-toggle span {
+    height: 4px;
+    display: block;
+    width: 30px;
+    background: #504D5F;
+    position: relative;
+    margin: 30px 0;
+    transition: background 0.5s ease-in;
+  }
+  .ba-menu-toggle span:before,
+  .ba-menu-toggle span:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #504D5F;
+    left: 0;
+    right: 0;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+  .ba-menu-toggle span:before {
+    top: -10px;
+  }
+  .ba-menu-toggle span:after {
+    bottom: -10px;
+  }
+  .ba-menu {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: #504D5F;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  }
+  .ba-menu li {
+    float: none;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .ba-menu li a {
+    color: #fcdb00;
+  }
+  .ba-menu .ba-logo {
+    display: none;
+  }
+  .ba-menu-opened {
+    -webkit-transform: translateX(-250px);
+        -ms-transform: translateX(-250px);
+            transform: translateX(-250px);
+    overflow: hidden;
+  }
+  .ba-menu-opened .ba-menu-toggle span {
+    background-color: transparent;
+  }
+  .ba-menu-opened .ba-menu-toggle span:before {
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .ba-menu-opened .ba-menu-toggle span:after {
+    -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  body {
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
   }
 }
 .ba-features {
